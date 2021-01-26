@@ -15,7 +15,7 @@ jobs:
     - name: Copy new deep-learning.ipynb
       uses: andstor/copycat-action@v3
       with:
-        personal_token: ${{ secrets.PERSONAL_TOKEN_WILL }}
+        personal_token: ${{ secrets.PERSONAL_TOKEN_GRANTHAM }}
         src_path: /deep-learning.ipynb
         src_branch: main
         dst_path: /content/deep-learning.ipynb
