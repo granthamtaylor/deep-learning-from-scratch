@@ -1,0 +1,25 @@
+---
+name: Copy and push to BLVD Insights
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "example.ipynb"
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Copy new example.ipynb
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN_WILL }}
+        src_path: /example.ipynb
+        src_branch: main
+        dst_path: /content/example.ipynb
+        dst_owner: boulevardcg
+        dst_repo_name: insights_portal
+        dst_branch: autoupdate-content
+        commit_message: Updates to example.ipynb   
